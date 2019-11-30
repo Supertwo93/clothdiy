@@ -1,0 +1,33 @@
+<template>
+	<view>
+		<view class="tabbar">
+			<view class="tabBox lf">
+				<image class="lftab" src="/static/tabbar-on.png"></image>
+				<view>首页</view>
+			</view>
+			<view class="tabBox rt">
+				<image class="rttab" src="/static/tabbarrt-no.png"></image>
+				<view>我的</view>
+			</view>
+		</view>
+		
+		<image class="diyButton" src="/static/diybutton.png"></image>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style lang="scss">
+
+</style>
