@@ -1,0 +1,56 @@
+/* pages/choice_color/choice_color.wxss */
+page {
+    background: #fff;
+}
+.cloth_diy, .color_list {
+    width: 100vw;
+    /* min-height: 100vh;
+    background: #fff; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.color_list {
+    position: fixed;
+    bottom: 50rpx;
+}
+.cloth {
+    width: 500rpx;
+    height: 600rpx;
+    margin: 150rpx;
+}
+.color_list_icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 79%;
+    flex-wrap: wrap;
+}
+.jumpToDiy {
+    width: 158rpx;
+    height: 50rpx;
+    background: #000;
+    color: #fff;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 50rpx;
+    border-width: 4rpx;
+    border-style: solid;
+    border-bottom-color: #FF41B5;
+    border-right-color: #FF41B5;
+    border-top-color: #00FCFC;
+    border-left-color: #00FCFC;
+    margin-top: 30rpx;
+}
+.color_button {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    margin: 10rpx;
+    border: 2rpx solid #C8C8C8
+}
+.color_big {
+    border-radius: 50%;
+    margin: 10rpx;
+    border: 1rpx solid #fff;
+}

@@ -1,0 +1,57 @@
+/* pages/cloth_series/cloth_series.wxss */
+.scrollDiv image {
+    max-width: 100%;
+}
+.scrllview {
+    display: flex;
+    /* align-items: baseline;
+    align-content: space-between;
+    flex-direction: column; */
+    width: 94vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 3vw;
+    margin-top: 25rpx;
+    margin-bottom: 3vw;
+}
+.cloth_view, .more_pic {
+    width: 45.5vw;
+    border-radius: 10rpx;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20rpx;
+}
+.cloth_view text {
+    color: #1E1E1E;
+    font-size: 28rpx;
+    padding: 15rpx;
+}
+.more_title {
+    width: 100vw;
+    color: #1E1E1E;
+    font-size: 26rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.more_pic {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.more_pic view {
+    background: #fff;
+    font-size: 28rpx;
+    color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 77rpx;
+}
+.right_icon {
+    width: 11rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+}

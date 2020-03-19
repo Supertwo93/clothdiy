@@ -1,0 +1,10 @@
+/* pages/share/share.wxss */
+.share {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.share_bg {
+    width: 100vw;
+    height: 100vh;
+}

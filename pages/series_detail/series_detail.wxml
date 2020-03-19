@@ -1,0 +1,27 @@
+<!--pages/series_detail/series_detail.wxml-->
+<view class='series_detail'>
+    <block wx:if="{{more_pic}}">
+        <view class="more_title">以下图片来源于网络</view>
+        <scroll-view scroll-y="true" class="scrollDiv">
+            <view  class='scrllview'>
+                <block wx:for="{{more_pic_lists}}" wx:key="index">
+                    <image class="more_pic" src='{{item.url}}'></image>
+                </block>
+            </view>
+        </scroll-view>
+    </block>
+    <block wx:else>
+        <view class='title'>简约撞色高领长袖T恤</view>
+        <view>潮服定制 炫出真我</view>
+        <text>/</text>
+        <scroll-view scroll-y="true" >
+            <view wx:for="{{list}}" wx:for-index="index" wx:key="index">
+                <view class="scrollDiv"  data-value='{{item}}' data-index='{{index}}'>
+                    <image src="{{item.url}}"></image>
+                </view>
+            </view>
+        </scroll-view>
+    </block>
+
+    
+</view>

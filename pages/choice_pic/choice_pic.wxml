@@ -1,0 +1,124 @@
+<!--pages/choice_pic/choice_pic.wxml-->
+<view class='cloth_diy'>
+    <view class="cloth_top">
+        <text class="text">可随意拖动图案，双指缩放图案</text>
+        <view style='margin:150rpx;margin-bottom:10rpx;'>
+            <view style='position:relative;' bindtouchstart='touchStartHandle' bindtouchmove='touchMoveHandle'>
+                <image wx:if="{{isTrue}}" class='cloth' src='/image/cloth/{{list[cloth_index].cloth_url}}' ></image>
+                <image wx:else class='cloth' src='/image/cloth/{{list[cloth_index].cloth_url_b}}'></image>
+                <block wx:for="{{img_list}}" wx:key="index">
+                    <image bindtouchmove="touchMove" style="{{'left:' + touch.left + 'rpx;top:' + touch.top + 'rpx;transform:rotate(' + touch.rotate + 'deg);'}}width:{{touch.scaleWidth}}rpx;height: {{touch.scaleHeight}}rpx;" class='picIcon' wx:if="{{showIndex==index && isTrue}}" src='{{item.url}}'></image>
+                    <image bindtouchmove="touchMove" style="{{'left:' + touch_b.left + 'rpx;top:' + touch_b.top + 'rpx;transform:rotate(' + touch_b.rotate + 'deg);'}}width:{{touch_b.scaleWidth}}rpx;height: {{touch_b.scaleHeight}}rpx;" class='picIcon' wx:if="{{showIndex_b==index && isTrue == false}}" src='{{item.url}}'></image>
+                </block>
+
+            </view>
+        </view>
+        <view class='cloth_right'>
+            <view bindtap='showModal' data-target="DialogModal1">
+                <image src='/image/question_icon.svg'></image>
+                <text>帮助</text>
+            </view>
+            <view data-target="bottomModal" bindtap='showModal'> 
+                <image src='/image/share.svg'></image>
+                <text>分享</text>
+            </view>
+            
+        </view>
+
+        <view class='icon_list'>
+            <view bindtap='choice_icon' data-choice='true' class=" cion_view {{isTrue? 'isTrue': 'isFalse'}} ">正</view>
+            <view data-choice='false' bindtap='choice_icon' class="cion_view {{isTrue? 'isFalse': 'isTrue'}} ">反</view>
+        </view>
+    </view>
+    <view class='cloth_bottom' wx:if="{{showPicList}}">
+        <view class='path_list'>
+
+            <view class='path'>
+                <image src='/image/color.png'></image>
+                <text>选择颜色 > </text>
+                <text style='color:#646464;'>选择图案</text>
+            </view>
+            <view class='nextIcon' bindtap='nextIcon'>下一步</view>
+        </view>
+        <scroll-view scroll-x style='width:96%;margin-bottom: 20rpx;'>
+            <view class='img_list'>
+                <view class="more_pic" bindtap='morePic'><image></image><text>更多图案</text></view>
+                <block wx:for="{{img_list}}" wx:key="index">
+                    <view>
+                        <image bindtap='choicePic' data-index='{{index}}' src='{{item.url}}'></image>
+                    </view>
+                </block>
+            </view>
+
+        </scroll-view>
+    </view>
+    <view class='cloth_bottom' style='border-top: 1rpx solid #ccc;' wx:else>
+        <view class='path_list' style='margin: 20rpx 0;'>
+            <text style='color:#1E1E1E;'>图片编辑(双指缩放图案)</text>
+            <view class='hiddenSeries' bindtap='nextIcon'>
+                <text>收起</text>
+                <image src="/image/show_pic_list.png "></image>
+            </view>
+        </view>
+        <view class='operation_list'>
+            <block wx:for="{{operation_list}}" wx:key="{{index}}">
+                <view class='operation_view' style='width: {{item.title == "旋转"?"22%;":item.title == "移动"? "55%;":" "}}'>
+                    <view class='operation_top'>
+                        <block wx:for="{{item.icon_list}}" wx:for-item="titem" wx:for-index="tindex" wx:key="{{tindex}}">
+                            <image src='{{"/image/operation/" + titem.img}}' bindtap='changePic' data-icon='{{titem.icon}}'></image>
+                        </block>
+                    </view>
+                    <view class='operation_bottom'>{{item.title}}</view>
+                </view>
+            </block>
+
+        </view>
+    </view>
+    <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}" >
+        <view class="cu-dialog" style='width: 500rpx;'>
+            <view class="cu-bar bg-white justify-end">
+                <view class="content">使用帮助</view>
+                <view class="action" bindtap="hideModal">
+                    <image src='/image/close_icon.png'></image>
+                </view>
+            </view>
+            <view class="padding-xl">
+                <view class='text_view'>
+                    <text>1、</text>
+                    <text>默认发“中通”快递，确认款式下单24小时内发货。</text>
+                </view>
+                <view class='text_view'>
+                    <text>2、</text>
+                    <text>热点爆款，明星网红同款，欢迎来图定制。</text>
+                </view>
+                <view class='text_view'>
+                    <text>3、</text>
+                    <text>潮服定制，把您的想法说出来，让我们专业专业服装师为您实现。</text>
+                </view>
+            </view>
+            <view class="cu-bar bg-white justify-center">
+                <view cl    ass="action">
+                    <view bindtap="share" class='jumpToDiy'>定制咨询</view>
+                    <!-- <button class="cu-btn bg-green margin-left" >定制咨询</button> -->
+
+                </view>
+            </view>
+        </view>
+       
+    </view>
+    <view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+        <view class="cu-dialog showShare">
+            <view bindtap="share" class="bg-white">
+                分享图片(进入后长按图片)
+            </view>
+            <view bindtap="share" class="bg-whitel">
+                直接分享
+            </view>
+            <view style='width:100%;height:10rpx;background:#f1f1f1;'></view>
+            <view bindtap="hideModal" class='bg-white'>
+                取消
+            </view>
+        </view>
+    </view>
+    <canvas wx:if="{{showPic}}" canvas-id="myCanvas" style="width: 100vw;height:100vh;position: fixed;top: 0px;left:0px;"></canvas>
+</view>

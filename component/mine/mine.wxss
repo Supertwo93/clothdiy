@@ -1,0 +1,73 @@
+/* component/mine/mine.wxss */
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+.title {
+    width: 100vw;
+    height: 480rpx;
+    background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.code {
+    position: absolute;
+    top: 350rpx;
+    left: 3vw;
+    width: 94vw;
+    background: #fff;
+    border-radius: 10rpx;
+    height: 300rpx;
+    padding: 20rpx;
+}
+.code image {
+    height: 260rpx;
+    width: 260rpx;
+}
+.mine {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mine_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.diy_icon {
+    width: 98rpx;
+    height: 94rpx;
+    margin-top: 100rpx;
+    margin-bottom: 50rpx;
+}
+.mine text {
+    margin-bottom: 20rpx;
+    z-index: 100;
+}
+.text_title {
+    color: #1E1E1E;
+    font-size: 36rpx;
+    font-weight: Medium;
+    font-family: SourceHanSansCN-Medium;
+}
+.text_detail {
+    width: 380rpx;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 46rpx;
+    color: #1E1E1E;
+    font-weight: normal;
+}
+.text_bottom {
+    width: 400rpx;
+    height: 560rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    z-index: 99;
+}

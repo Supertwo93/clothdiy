@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar": "/component/tabbar/tabbar",
+    "home": "/component/home/home",
+    "mine": "/component/mine/mine",
+    "cloth_diy": "/component/cloth_diy/cloth_diy"
+  }
+}

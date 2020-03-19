@@ -1,0 +1,19 @@
+<!--component/tabbar/tabbar.wxml-->
+<view class='tabbar'>
+    <!-- <view wx:if='{{getPath == "home"}}' style='height:50rpx;width: 100vw;background:#fff;'></view> -->
+    <view class="tabbar_detail">
+        <block wx:for="{{list}}" wx:key="index">
+            <view class="router_icon_div ">
+                <view class="{{item.path == 'home'? 'color_pink': 'color_blue'}}"></view>
+                <view bindtap='jump' data-path='{{item.path}}' class='router_icon'>
+                    <image wx:if="{{item.path != getPath}}" src='{{item.img}}'></image>
+                    <image wx:if="{{item.path == getPath}}" src='{{item.img_choice}}'></image>
+                    <text style='{{item.path == getPath? "color: #FF41B5": ""}}'>{{item.text}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+    
+
+    <image data-path='diy' class='diy_icon' src='/image/diy_icon.png' bindtap='jump'></image>
+</view>

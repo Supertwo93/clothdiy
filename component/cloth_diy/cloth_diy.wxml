@@ -1,0 +1,15 @@
+<!--component/cloth_diy/cloth_diy.wxml-->
+<view class='cloth_diy'>
+    <!-- <view class='title'>
+        <view class='bg_pink'></view>
+        <view class='title_detail'>{{title}}</view>
+    </view>
+    <view class='text'>{{text}}</view> -->
+    <image class='diy_bg' src='/image/diy_bg.png'></image>
+    <view style='position: relative;'>
+        <image class='cloth' src='/image/cloth/{{list[0].cloth_url}}'></image>
+        <image class="diy_pic" src='{{diy_pic.url}}'></image>
+    </view>
+    
+    <view bindtap='startCreate' class="startCreate">开始定制潮服</view>
+</view>

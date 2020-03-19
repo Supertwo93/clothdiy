@@ -1,0 +1,81 @@
+/* component/home/home.wxss */
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+.pic_top {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 100vw;
+    z-index: 99;
+}
+.scrollDiv {
+    /* margin-top: 400rpx; */
+    margin-bottom: 180rpx;
+    
+}
+.scrllview {
+    display: flex;
+    /* align-items: baseline;
+    align-content: space-between;
+    flex-direction: column; */
+    width: 94vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 3vw;
+    flex-direction: column;
+    
+}
+.title {
+    color: #222222;
+    font-size: 34rpx;
+    font-weight: Medium;
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    align-items: center;
+}
+.bg_color_title {
+    width: 14rpx;
+    height: 40rpx;
+    background: #FF41B5;
+    margin-right: 15rpx;
+}
+.bg_left {
+    background: #000;
+    width: 7rpx;
+    height: 40rpx;
+}
+.series_icon {
+    height: 60vw;
+    width: 45.5vw;
+    display: inline-block;
+    /* flex-direction: column; */
+    position: relative;
+    margin-bottom: 20rpx;
+    flex-direction: column;
+}
+.series_icon image {
+    width: 45.5vw;
+    height: 100%;
+    border-radius: 10rpx;
+    /* height: auto; */
+}
+.series_icon text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 10rpx 10rpx;
+    color: #fff;
+    background: #000;
+    opacity: 0.5;
+    width: 100%;
+    text-align: center;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+.help-select-contet {
+    column-count: 2;    
+    column-gap: 4rpx;
+    width: 100%;
+}

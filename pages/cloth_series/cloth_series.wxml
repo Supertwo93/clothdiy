@@ -1,0 +1,23 @@
+<!--pages/cloth_series/cloth_series.wxml-->
+<view style='width: 100vw;'>
+    <view class="more_title" wx:if="{{more_pic}}">以下图片来源于网络</view>
+    <scroll-view scroll-y="true" class="scrollDiv">
+        <view  class='scrllview'>
+            <block wx:if="{{more_pic == false}}" wx:for="{{list.list}}" wx:for-index="index" wx:key="index">
+                <view class='cloth_view' bindtap='jumpToSeriesDetail' data-value='{{item}}' data-index='{{index}}'>
+                    <image src="{{item.url}}"></image>
+                    <text>{{item.type}}</text>
+                </view>
+            </block>
+            <block wx:if="{{more_pic}}" wx:for="{{more_pic_lists}}" wx:key="index">
+                <view class="more_pic" data-more='{{more_pic}}' bindtap='jumpToSeriesDetail' data-value='{{item}}' data-index='{{index}}'>
+                    <image  src='{{item.url}}'></image>
+                    <view>
+                        <text>{{item.type}}</text>
+                        <image class='right_icon' src="/image/right.png"></image>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>

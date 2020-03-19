@@ -1,0 +1,12 @@
+<!--pages/choice_color/choice_color.wxml-->
+<view class='cloth_diy'>
+    <image class='cloth' src='/image/cloth/{{list[colorIndex].cloth_url}}'></image>
+    <view class='color_list'>
+        <view class='color_list_icon'>
+            <view class="color_big" wx:for="{{list}}" wx:key="index" bindtap='choice_color' data-index='{{index}}' style='{{colorIndex == index ? "border:1rpx solid #C8C8C8;": ""}}'>
+                <view class="color_button" style='background:{{item.color_2?"linear-gradient(" + item.color + "," + item.color_2 + ")":item.color}}' ></view>
+            </view>
+        </view>
+        <view bindtap='jumpToDiy' class='jumpToDiy'>确认</view>
+    </view>
+</view>

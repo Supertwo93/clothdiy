@@ -1,0 +1,4 @@
+<!--pages/share/share.wxml-->
+<view class='share'>
+    <image class='share_bg' src='/image/share_bg.png'></image>
+</view>

@@ -1,0 +1,18 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/cloth_series/cloth_series",
+        "pages/series_detail/series_detail",
+        "pages/choice_color/choice_color",
+        "pages/choice_pic/choice_pic",
+        "pages/share/share"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "服饰DIY",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+}

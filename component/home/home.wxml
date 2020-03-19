@@ -1,0 +1,32 @@
+<!--component/home/home.wxml-->
+
+<view style='width: 100vw;'>
+    <view class='pic_top'>
+        <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+            <swiper-item wx:for="{{swiperList}}" wx:key>
+                <image src="{{item.url}}" mode="aspectFill"></image>
+            </swiper-item>
+        </swiper>
+        <view style='height:20rpx;width:100vw;background:#fff;'></view>
+    </view>
+    <scroll-view scroll-y="true" class="scrollDiv">
+        <view class='scrllview' wx:for="{{diy_img_list}}" wx:for-index="index" wx:key="index">
+            <view class='title'>
+                <view class='bg_color_title'>
+                    <view class='bg_left'></view>
+                </view>
+                <text>{{item.title}}</text>
+            </view>
+            <view class='help-select-contet'>
+                <block wx:for="{{item.list}}" wx:for-item="titem" data-item="titem" wx:for-index="tindex" wx:key="tindex">
+                    <view class='series_icon' bindtap='jumpToSeries' style='{{tindex==4?"height:45.5vw;":""}}' data-value='{{titem}}' data-index='{{index}}'>
+                        <image src="{{titem.url}}"></image>
+                        <text>{{titem.type}}</text>
+                    </view>
+                </block>
+            </view>
+
+
+        </view>
+    </scroll-view>
+</view>

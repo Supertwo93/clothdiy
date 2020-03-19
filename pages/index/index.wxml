@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <home style="background: #fff;" wx:if="{{getPath == 'home'}}"></home>
+  <mine wx:if="{{getPath == 'mine'}}"></mine>
+  <cloth_diy diy_pic="{{diy_pic}}" wx:if="{{getPath == 'diy'}}"></cloth_diy>
+  <tabbar bind:getPath="getPath"></tabbar>
+</view>
